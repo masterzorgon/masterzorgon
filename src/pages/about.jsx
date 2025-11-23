@@ -61,15 +61,13 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Hey there, I’m Nathan. 
+              Hey, I’m Nathan. 
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I'm a generalist currently working on building a more inclusive financial system. I am always trying new things and exploring new ideas. Recently, I've grown to love yoga and long distance running.<br/><br/>
-
-                I've been working in the Solana ecosystem for over 3 years, and I've worked as an early employee for some of the most exciting projects in the ecosystem, namely <a target="_blank" href="https://www.helius.dev/" className='underline dark:hover:text-teal-500'>Helius</a> and <a target="_blank" href="https://marginfi.com/" className='underline dark:hover:text-teal-500'>marginfi</a>.<br/><br/>
-
-                I believe that you should do what you say you're going to do, and that you should always be learning. I try to live by these values every day.
+                Choose deiscomfort; never settle; always be learning. These are the values I live by. 
+                <br/><br/>
+                I'm an engineer with an interest helping early stage companies scale. I've spent most of my career working across the stack at some of the most successful crypto companies (Helius, MarginFi, Ether.fi), and I'm commited to building products that improve the lives of people.
               </p>
             </div>
           </div>
@@ -83,13 +81,6 @@ export default function About() {
               </SocialLink>
               <SocialLink href="https://www.linkedin.com/in/nathan-galindo/" icon={LinkedInIcon} className="mt-4">
                 Follow on LinkedIn
-              </SocialLink>
-              <SocialLink
-                href="mailto:nathan.zebedee@gmail.com"
-                icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-              >
-                Send me an email
               </SocialLink>
             </ul>
           </div>

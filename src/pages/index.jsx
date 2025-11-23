@@ -22,11 +22,12 @@ import logoPython from '@/images/logos/py.png'
 import logoR from '@/images/logos/r.png'
 import logoSqlServer from '@/images/logos/sql-server.webp'
 
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+// import image1 from '@/images/photos/image-1.jpg'
+// import image2 from '@/images/photos/image-2.jpg'
+// import image3 from '@/images/photos/image-3.jpg'
+// import image4 from '@/images/photos/image-4.jpg'
+// import image5 from '@/images/photos/image-5.jpg'
+
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
@@ -247,6 +248,26 @@ function Photos() {
   )
 }
 
+function NewsletterSignup() {
+  return (
+    <div className="w-full rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <MailIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Newsletter</span>
+      </h2>
+      <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+        Subscribe to my newsletter to get updates on my latest projects and blog posts.
+      </p>
+      <form className="mt-6">
+        <div className="p-1.5 flex rounded-md border border-zinc-300 dark:border-zinc-600 overflow-hidden shadow-sm focus-within:ring-2 focus-within:ring-teal-500 focus-within:border-teal-500">
+          <input type="email" placeholder="example@email.com" className="flex-1 rounded-l-md rounded-r-none border-none px-3 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none dark:bg-transparent dark:text-zinc-100 dark:placeholder:text-zinc-600" />
+          <button type="submit" className="rounded bg-teal-500 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-600 focus:outline-none dark:bg-teal-600 dark:hover:bg-teal-700">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  )
+}
+
 export default function Home({ articles }) {
   return (
     <>
@@ -257,7 +278,7 @@ export default function Home({ articles }) {
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>" />
         <meta
           name="description"v
-          content="I’m Nathan."
+          content="I’m Nathan - Welcome to my website!"
         />
       </Head>
       <Container className="mt-9">
@@ -266,7 +287,7 @@ export default function Home({ articles }) {
             Learner. Builder. Explorer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Nathan, a generalist currently working on building a more inclusive financial system at marginfi. I am constantly learning and exploring new ideas, and am never shy of a challenge.
+            Choose deiscomfort; never settle; always be learning. These are the values I live by. 
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -290,7 +311,18 @@ export default function Home({ articles }) {
           </div>
         </div>
       </Container>
+
       <Photos />
+
+      {/* newsletter signup */}
+      <Container className="mt-24 md:mt-28">
+        <div className="mx-auto grid max-w-xl gap-y-20 lg:max-w-none w-full">
+          <div className="flex flex-col gap-16">
+            <NewsletterSignup />
+          </div>
+        </div>
+      </Container>
+  
       
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
