@@ -7,7 +7,7 @@ import { Container } from '@/components/Container'
 import {
   GitHubIcon,
   LinkedInIcon,
-  TwitterIcon,
+  XIcon,
 } from '@/components/SocialIcons'
 
 import logoReact from '@/images/logos/react.svg'
@@ -291,9 +291,9 @@ export default function Home({ articles }) {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com/masterzorgon"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
+              href="https://x.com/masterzorgon"
+              aria-label="Follow on X"
+              icon={XIcon}
               target="_blank"
             />
             <SocialLink

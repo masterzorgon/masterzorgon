@@ -7,7 +7,7 @@ import { Container } from '@/components/Container'
 import {
   GitHubIcon,
   LinkedInIcon,
-  TwitterIcon,
+  XIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 
@@ -73,8 +73,8 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://twitter.com/masterzorgon" icon={TwitterIcon}>
-                Follow on Twitter
+              <SocialLink href="https://x.com/masterzorgon" icon={XIcon}>
+                Follow on X
               </SocialLink>
               <SocialLink href="https://github.com/masterzorgon" icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
