@@ -314,13 +314,13 @@ export default function Home({ articles }) {
       <Photos />
 
       {/* newsletter signup */}
-      <Container className="mt-24 md:mt-28">
+      {/* <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl gap-y-20 lg:max-w-none w-full">
           <div className="flex flex-col gap-16">
             <NewsletterSignup />
           </div>
         </div>
-      </Container>
+      </Container> */}
   
       
       <Container className="mt-24 md:mt-28">
