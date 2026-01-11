@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
@@ -22,11 +21,11 @@ import logoPython from '@/images/logos/py.png'
 import logoR from '@/images/logos/r.png'
 import logoSqlServer from '@/images/logos/sql-server.webp'
 
-// import image1 from '@/images/photos/image-1.jpg'
-// import image2 from '@/images/photos/image-2.jpg'
-// import image3 from '@/images/photos/image-3.jpg'
-// import image4 from '@/images/photos/image-4.jpg'
-// import image5 from '@/images/photos/image-5.jpg'
+import image1 from '@/images/photos/image-1.jpg'
+import image2 from '@/images/photos/image-2.jpg'
+import image3 from '@/images/photos/image-3.jpg'
+import image4 from '@/images/photos/image-4.jpg'
+import image5 from '@/images/photos/image-5.jpg'
 
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
@@ -34,8 +33,8 @@ import { getAllArticles } from '@/lib/getAllArticles'
 
 function MailIcon(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
     </svg>
   );
 }
@@ -58,8 +57,8 @@ function FrameworkIcon(props) {
 
 function CodeIcon(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
     </svg>
   );
 }
@@ -101,11 +100,11 @@ function Article({ article }) {
   );
 }
 
-function SocialLink({ icon: Icon, ...props }) {
+function SocialLink({ icon: Icon, href, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <a href={href} className="group -m-1 p-1" rel="noopener noreferrer" {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
+    </a>
   )
 }
 
@@ -157,7 +156,7 @@ const Frameworks = () => {
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Tool</dt>
-              <a target="_blank" href={tool.url} className="transition-all duration-150 mt-3 w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100 dark:hover:text-teal-500 hover:text-teal-500">
+              <a target="_blank" rel="noopener noreferrer" href={tool.url} className="transition-all duration-150 mt-3 w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100 dark:hover:text-teal-500 hover:text-teal-500">
                 {tool.name}
               </a>
             </dl>
@@ -211,7 +210,7 @@ const Languages = () => {
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Language</dt>
-              <a target="_blank" href={lang.url} className="transition-all duration-150 mt-3 w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100 dark:hover:text-teal-500 hover:text-teal-500">
+              <a target="_blank" rel="noopener noreferrer" href={lang.url} className="transition-all duration-150 mt-3 w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100 dark:hover:text-teal-500 hover:text-teal-500">
                 {lang.name}
               </a>
             </dl>
@@ -277,8 +276,8 @@ export default function Home({ articles }) {
         </title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>" />
         <meta
-          name="description"v
-          content="I’m Nathan - Welcome to my website!"
+          name="description"
+          content="I'm Nathan - Welcome to my website!"
         />
       </Head>
       <Container className="mt-9">
